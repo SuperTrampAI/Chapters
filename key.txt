@@ -1,0 +1,45 @@
+alt+ctrl+s     # 打开设置界面
+tab            　# 选择要缩进的代码，按键缩进
+shift+tab       # 选择要缩进的代码，按键增加
+ctrl+d           # 复制本行粘贴到下一行
+ctrl+?　　　  #选择要添加注释的行，按键进行#添加或去除
+双按shift　　#全局搜索
+ctrl+/　　　  #注释
+ctrl+F　　　 #查找
+ctrl+R　　　#查找替换
+Shift+F10      #运行
+
+1	CTRL + ALT + SPACE	快速导入任意类
+2	CTRL + SHIFT + ENTER	代码补全
+3	SHIFT + F1	查看外部文档
+4	CTRL + Q	快速查找文档
+5	CTRL + P	参数信息（在方法中调用的参数）
+6	CTRL + MOUSE OVER CODE	基本信息
+7	CTRL + F1	显示错误或警告的描述
+8	CTRL + INSERT	生成代码
+9	CTRL + O	重载方法
+10	CTRL + ALT + T	包裹代码
+11	CTRL + /	单行注释
+12	CTRL + SHIFT + /	块注释
+13	CTRL + W	逐步选择代码（块）
+14	CTRL + SHIFT + W	逐步取消选择代码（块）
+15	CTRL + SHIFT + [	从当前位置选择到代码块的开始
+16	CTRL + SHIFT + ]	从当前位置选择到代码块的结束
+17	ALT + ENTER	代码快速修正
+18	CTRL + ALT + L	代码格式标准化
+19	CTRL + ALT + O	最佳化导入
+20	CTRL + ALT + I	自动缩进
+21	TAB	代码向后缩进
+23	SHIFT + TAB	代码向前取消缩进
+24	CTRL + SHIFT + V	历史复制粘贴表
+25	CTRL + D	复制当前代码行/块
+26	CTRL + Y	删除当前代码行/块
+27	CTRL + SHIFT + J	代码连接为一行
+28	SHIFT + ENTER	开启新一行
+28	CTRL + SHIFT + U	字母大写
+29	CTRL +DELETE	向后逐渐删除
+30	CTRL + BACKSPACE	向前逐渐删除
+31	CTRL + NUMPAD+/-	代码块展开/折叠
+32	CTRL + SHIFT + NUMPAD+	所有代码块展开叠
+33	CTRL + SHIFT + NUMPAD-	所有代码块折叠
+34	CTRL + F4	关闭活动编辑窗口
