@@ -42,4 +42,4 @@ Shift+F10      #运行
 31	CTRL + NUMPAD+/-	代码块展开/折叠
 32	CTRL + SHIFT + NUMPAD+	所有代码块展开叠
 33	CTRL + SHIFT + NUMPAD-	所有代码块折叠
-34	CTRL + F4	关闭活动编辑窗口
+34	CTRL + F4	关闭活动编辑窗口1010
