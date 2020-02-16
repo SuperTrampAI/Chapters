@@ -6,13 +6,13 @@
 # @Software: PyCharm
 # __fileName__='Chapters hello_world_2'
 # __create_data__='2020/1/16 22:22'
-# @Description: add Description
+# @Description: python_work 文件根据《python 编程 从入门到实践》改编
 
 # python_word 文件夹下面的文件，为书籍《python 编程 从人坑到实践》
 
 # python 运行hello world 发生了什么
 
-name=' ada lovelace '
+name = ' ada lovelace '
 # title 方法将首字母转变成大写
 print(name.title())
 # upper 全部转变成大写
@@ -40,12 +40,16 @@ print(name.strip())
 
 # 根据值从list中删除：lists.remove('value') 只会删除在list中遇到的第一个值，如果要删除多个，需要循环删除
 
+cars = ['toyota', 'byt', 'hq', 'bmw', 'bab']
 
+cars.sort()
+print(cars)  # 根据大小写字母排序
 
+# sort 的参数 reverse =True 按照字母倒叙排序
+cars.sort(reverse=True)
+print(cars)
 
-
-
-
+# sorted() 函数对列表进行临时排序，不影响原有列表中元素的位置
 
 
 
