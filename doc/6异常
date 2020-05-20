@@ -1,0 +1,7 @@
+首先执行try中的代码块，如果try中的没有发生异常，则跳过except中的语句
+如果try中发生了异常
+语法：
+    try:
+
+    except ValueError:
+
