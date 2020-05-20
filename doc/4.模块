@@ -1,0 +1,20 @@
+导包的方式：
+模块
+1.import fibo as fib 取别名
+2.from fibo impoert method1,method2
+3.from fibo impor * 该用法一般不推荐使用。
+
+dir()函数：用于查找模块定义的名称，返回一个排序过的字符串列表
+dir函数不会列出内置的函数和变量的名称，可以通过在dir函数中转入builtins
+
+包：
+    导包的语法：
+    1.import package.effects.echo 使用：package.effects.echo.method.. 该语法的最后一项必须是一个包或者模块，但是不能是类或函数或变量
+    2.from package.effects import echo 使用： echo.method..
+    3.from package.effects.echoh import  method 直接导入变量或者是函数。
+    import语句首先测试是否定义了包，然后在检测是否定义了模块。
+
+
+
+
+

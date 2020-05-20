@@ -1,0 +1,73 @@
+列表，语法：lists=[]
+方法：
+    append()：在末尾增加一个
+    extend(interable)：在末尾增加多个值
+    insert(i,x)：在i下标增加x
+    remove(x) ：删除列表中第一个值为x的元素。如果没有，抛出ValueError异常
+    pop([x])：删除列表中给定位置的元素并返回ta， 如果没有给定位置，则删除最后一个元素。
+    clear():清除全部元素
+    index(x[start,end]) 返回列表中第一个值为x的元素的从零开始的索引，如果没有这样一个元素，抛出ValueError异常
+    count(x) 返回元素x在列表中出现的次数
+    sort(key=None,reverse=False) 对列表中的元素进行排序
+    reverse() 反转列表中的元素
+    copy() 返回列表的一个浅拷贝
+
+
+列表作为栈使用，后进先出，lists.pop()
+列表作为队列使用，先进先出，使用collections.deque，设计用于快速地从两端操作
+    1.导包：from collections import deque
+    2.定义：queue=deque([1,2,3,4,5])
+
+列表推导式的目的是为了更简单的创建列表的方法。语法：
+一个表达式+for语句+零个或者多个for或if子句。
+squares=[x**2 for x in range(10)]
+
+内置函数：
+matrix=[[],[],[]]
+zip：list(zip(*matrix))
+
+del 语句：按照类别给定的索引来移除元素。除了移除单个，还可以移除切片或者清空这个列表。
+可以删除变量
+
+
+元组和序列
+元组 语法：1,2,3,4 值之间使用逗号隔开。在输入是，括号可有可无，输入的时候是一定会有的，而如果是嵌套的元组，
+那在这种情况下，括号在定义的时候就是必须的。
+元组是不可变的（immutable），其序列通常包含不同种类的元素。通过解包或者索引来访问。
+空元组可以直接使用一堆空圆括号创建，含有一个元素的元组可以通过元素后添加一个逗号表示创建。
+
+列表时mutable可变的，列表中的元素一般是同种类型的，通过迭代访问。
+
+集合：不重复元素组成的无序的集，包括成员检测和消除重复元素。(集合也支持推导式形式)
+创建集合，语法：basket={1,2,3,4,5} 创建一个空集合只能使用set()而不能用{}，后者是创建一个空字典。
+两个集合之间的对比：a-b; a | b ; a&b ; a^b
+
+字典：在其他语言中可能叫map，字典以关键字为索引，关键字可以是任意不可变类型，通常为字符串或数字，如果一个元素只包含字符串，数字，或元组，也可以作为关键字。
+python中的字典是一个键值对的集合，键必须唯一
+语法：param={}
+直接初始化并赋值param={"key":"value"}
+param['key']='value'
+sorted(param) 排序
+'value' in param 在param中是存在value的元素，存在返回True，不存在返回False
+字典的dict函数的使用：
+    1.dict([("",""),("",""),("","")])
+    2.dict(key=value,key=vaule)
+
+关于循环：
+    字典：
+    map={"":""}
+    for k,v in map.items():
+        print(k,v)
+
+    for i,v in enumerate(['','',''])
+        print(i,v)
+
+    ['','','']
+    ['','','']
+    for q,a in zip(q,a):
+    print(''.format(q,a))
+
+逆向循环
+for i in reversed(range(1,10,2)):
+    print(i)
+

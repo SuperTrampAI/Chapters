@@ -43,3 +43,4 @@ Shift+F10      #运行
 32	CTRL + SHIFT + NUMPAD+	所有代码块展开叠
 33	CTRL + SHIFT + NUMPAD-	所有代码块折叠
 34	CTRL + F4	关闭活动编辑窗口1010
+35  ALT+方向键 在打开的多个tab之间切换

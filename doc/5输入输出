@@ -1,0 +1,46 @@
+1.语法：f"{param}" f"{param:.3f}" 舍入到小数点后三位 在冒号后面跟一个整数，可以让该字段有一个最小字符宽度
+让没一个字段都有一个固定的宽度
+2.string.format() string为格式化的规则，括号里面的为需要格式化的字符
+    '{:-9} YES votes  {:2.2%}'.format(yes_votes, percentage) 可以在占位符里面使用语法来格式化字符
+    'string{},{}'.format('','') 简单使用，直接使用format中的值，替换到string的{}的里面
+    'string{1},{0}'.format('','') 占位符中，还可以指定下标，来显示的插入对应的值。
+    'string{foot},{adj}'.format(food='',adj='') 使用参数名来指定值，并应用
+    'string{0},{param}'.format('param',param='') 下标和参数名可以组合使用
+    'jack:{0[Jack]:d}'.format(table) table 为字典，通过占位符中的方式取得字典里面的value
+    'Jack:{Jack:d}'.format(**table) table为字典，通过**符号将table作为关键字传递
+    repr(x).rjust(2) 手动格式化，在第二个固定长度的位置放置该值，rjust中的数字表示在哪个这一行的哪个位置放置值
+        rjust方法通过在左侧填充空格来对给定宽度的字段进行右对齐。
+        ljust 为左对齐
+        center 为中间对齐？可能是的吧
+        如上三种方法，不会截断字符，如果需要截断，添加一个切片的操作：x.ljust(n)[:n]
+
+    str.zfill(n) 在左边填充零，在位数不够的时候，符号，小数点都算位数。在位数足够的时候，不会进行截取操作，只有在不足的时候进行左边加零
+    str % math 使用%符号格式化字符串
+
+3.读写文件，在处理文件对象时，最好使用with关键字，可以让子句结束后，文件会正确关闭 语法： with open('') as f: f.read
+如果不使用with，则需要显示的调用f.closed
+f=open('workfile','mode')
+    workfile:包含文件名的字符串
+    mode:可选参数，默认为r，可以在mode中增加b，则以binary mode打开文件
+        w：只能写入，已存在同名文件会被删除
+        r：文件只能读取
+        a：打开文件以追加内容
+        r+：打开文件进行读写
+在打开文件对象以后，读取文件内容：f.read(size)  当参数size为空或者是负数时，读取并返回整个文件内容。
+如果文件的大小是你机器内存的两倍就会出现问题。如果已经达到文件末尾，则返回一个空字符串（''）
+f.readline() 从文件中读取一行。
+而需要从文件读取行，建议采取循环文件对象的方式 for line in f:
+以列表的形式读取文件中的所以行：list(f) or f.readlines()
+
+写入文件：f.write(string)  返回写入的字符数。该方法智能写入字符串，因此在写入其他类型的对象之前，需要把它们
+转化为对应的字符串或者是字节对象：str(value)
+f.tell 返回一个整数，给出文件对象在文件中的当前位置。通过seek()改变文件的位置指向
+
+使用json保存结构化数据： python有内置的json包：import json
+
+3.repr() 和str()可以将任何字转化为字符串，str函数用于返回人类可读的值，repr用于生成解释器可读的表示。
+对于没有人类可读性的表示的对象，str将和repr一样。
+
+
+
+
