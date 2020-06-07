@@ -1,0 +1,28 @@
+标准通用标记语音SGML
+
+超文本标记语音HTML
+    html.escape(s,quote=True) 将字符串s中的& <> 转换为安全的html序列。 如果quote为真值，则字符单引号和双引号也将被转换，用于解析a链接的属性的标签。
+    html.unescape(s) 将字符串s中的所以命名和数字字符应用转换为相应的unicode字符。
+    html包中的子模块：
+        html.parser-- 具有宽松解析模式的html，xhtml解析器
+            该模块中有一个HTMLPearser类，为xhtml，和html解析提供了基础。
+            feed：填充一些文本到解析器中，如果包含完整的元素，则被处理
+            close：强制处理所有缓冲数据
+            reset：重置实例，丢失所有未处理的数据。
+            getpos：返回当前行号和偏移值
+            handle_starttag(tag,attrs):在标签开始的时候被调用，（'a',[{'href','www.google.com'}]）
+            handle_endtag(tag) ：用来处理元素的结束标签。</div>
+            handle_startendtag(tag,attrs):和handle_starttag类似，用于在xhtml样式标签时被调用。简单的调用为handle_starttag和handle_endtag
+            handle_data(data)：被用来处理任意数据
+            handle_entityref(name):用于处理&name形式的命名字符引用。
+            handle_comment(data)：在遇到注释的时候被调用。
+            handle_decl(decl)：这个方法用于处理html doctype 列如 doctype html
+            handle_pi(data):遇到处理指令的时候被调用，<?proc color='red'>
+            unknown_decl(data):当解析器读到无法识别的声明时，此方法被调用。
+
+
+
+        html.entities--html实体定义
+
+
+可扩展标记语言：XML

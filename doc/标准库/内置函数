@@ -1,0 +1,157 @@
+abs()：返回一个数的绝对值，可以是整数和浮点数
+
+delattr(ojbect,name)  和setattr类似，实参是一个对象和字符串。该字符串必须是对象的某个属性。如果对象允许，该函数将删除指定的属性
+delattr(x,'foobar')等价于def x.foobar
+
+hash(object) 返回该对象的哈希值。哈希值是整数，在字典查找元素时，用来快速比较字典的键。相同大小的数字变量有相同的哈希值，比如1和1.0的hash是相同的
+可以自定义__hasd__方法。
+
+memoryview() 返回给定实参创建的内存视图对象
+
+set() 返回一个新的set对象，创建一个集合类型，
+
+all() 如果iterable的所有元素均为真值，或可迭代对象为空，则返回 True
+
+dict(**kwarg)：创建一个新的字典，dict对象是一个字典类。
+
+help([obj])：如果有实参，则在模块，函数，类，方法，关键字或文档主题中搜索该字符串，并在控制台上打印帮助信息。
+
+min() 返回可迭代对象中最小的元素，或者返回两个及以上实参中最小的。
+
+setattr(obj，name，value)：该函数与getattr对应，参数为一个对象，一个字符串，一个任意值。字符串指定一个现有属性或新增属性。函数会将值赋值给该属性。比如setattr(obj,'param',value)等价于x.param=value
+
+any() 如果iterable的任意元素为真值，则返回True，如果可迭代对象为空，返回False。
+
+dir([obj])：如果没有实参，则返回当前本地作用域中的名称列表。如果有实参，它会尝试返回该对象的有效列表。
+可以自定义__dir__方法，该方法必须返回一个属性列表。
+
+hex(x)：整数转换为0x为前缀的小写十六进制字符串。
+'%x' % 255 = ff x为大写时：=FF
+
+next(iterable,*[,key,default])：通过调用iterator的__next()__方法获取下一个元素。如果有默认值则返回，如果没有默认值则触发StopIteration
+
+slice(stop):
+slice(start,stop,[,step])：
+
+ascii()：返回一个对象可打印的字符串
+
+divmod(a，b)：将两个非复数作为实参，并在执行整数除法时，返回一堆商业余数
+
+id()：返回对象的标识值，该值是一个整数，在此该项的生命周期中保证是唯一且恒定的。生命期不重叠的对象坑具有相同的id值
+
+object()
+
+sorted()：返回一个没有特征的新对象，是所以类的基类。不函数不接受任何实参。
+
+bin(x)：将一个整数转变成一个前缀为0b的二进制字符串。结果是一个合法的python表达式。如果x不是int对象，则需要定义index方法
+使用其他前缀返回二进制：format(14,'#b')=0b1110 format(14,'b')=1110
+
+enumerate(interable,start=0)：返回一个枚举对象，interable必须是一个序列，或interator，或者其他支持迭代的对象。
+
+input()
+
+oct()：将一个整数转变成为一个前缀为“0o”的八进制字符串。
+
+@staticmethod():将方法转换为静态方法。在方法上，声明上该注解。
+
+bool([x]) 返回一个布尔值，bool类是int的子类。其他类不能继承自它。
+
+eval(expression[globals[locals]])：x=1 eval('x+1') 输出为2
+还可以用来执行任何代码对象compile()，
+
+int()
+
+open(file,mode-'r',buffering=-1,encoding=None,errors=None,newline=None,closefd=True,opener=None)：打开文件file，并返回对应的file object，如果该文件不能打开，则触发OSError
+
+
+str()：
+str(obj=b'',encoding='utf-8',errore='strict')：返回一个str版本的obj。
+
+breakpoint(*args,**kws)：在调用该函数时，将进入到调式器中。breakpoint调用sys.breakpointhoot(),
+
+exec(obj[globals[locals]])：支持动态执行python代码，obj必须是字符串或者代码对象。
+如果是字符串将被解析为一系列python语句并执行。如果是代码对象，则直接执行。
+
+isinstance()
+
+ord()：返回单个字符串的unicode码点的整数，ord('a')返回整数97，为chr()的逆函数
+
+sum(iterrable，/,start=0)：从start开始自左向右对iterable的项求和并返回和。
+
+bytearray()：返回一个新的bytes数组，可变序列，范围：0<=x<256，
+
+filter(function,iterable)：用iterable中函数funtion返回真的那些元素，构建一个新的迭代器。
+
+issubclass()
+
+pow(base，exp[,mod])：返回base的exp次幂，如果mod存在，则返回base的exp次幂对mod取余。pow(base,exp)等价于base**exp
+
+super([type[,object-or-type]])：在类继承的时候使用，返回一个代理对象，
+
+bytes()：不可变序列
+
+float([x])：返回从数字或字符串x生成的浮点数。
+
+iter()
+
+print(*obj,sep=' ',end='\n',file=sys.stdout,flush-False)：将obj打印的file指定的文本流，以sep分隔并在末尾加上end。
+
+tuple():实际是一个不可变的序列类型。
+
+callable(object)：如果参数object是可调用的就返回true，否则返回false。
+
+format(value[format_spec])：将value转换为format_spec 控制的格式化表示。
+
+len()
+
+@property(fget=None,fset=None,fdel=None,doc=None)：返回property属性
+property装饰器会将method()方法转化为一个具有相同名称的只读属性的getter，并将文档字符串设置为三个双引号中的文本。
+
+type()：
+type(name,bases,dict):传入一个参数是，返回obj的类型，使用isinstance()内置函数来检测对象的类型。
+
+chr(i)：返回Unicode码位为整数i的字符的字符串格式，比如chr(97) 返回字符串a，是ord的逆函数
+i的合法范围在0到1114111，如果超过这个范围，会引发ValueError异常
+
+frozenset([interable])：返回一个该对象，
+
+list()
+
+range():虽然看似函数，实际是一个不可变序列类型
+
+vars()：返回模块，类，实例和任何其他具有__dict__属性的对象的dict属性。
+
+@classmethod()：把一个方法封装成类方法。
+类似于java中的注解，在定义方法def上使用
+
+getattr(obj,name[default])：返回该对象命名属性的值，name必须是字符串。如果name是对象的属性一直，则返回该属性的值。
+
+
+locals()
+
+repr()：返回包含一个对象的可打印表示形式的字符串。
+
+zip()：创建一个聚合了来自每个可迭代对象中的元素的迭代器。
+
+compile()：将source编译成代码或者ast对象。
+
+globals()：返回点前全局符号表的字典，
+
+map()
+
+reversed(seq)：返回一个方向的interator，
+
+__import__()
+
+complex()：
+
+hasattr(obj，name)：该实参是一个对象和一个字符串，如果字符串是对象的属性之一的名称，则返回True，否则返回False
+
+max()
+
+round(number[,ndigits])：返回number舍入到小数点后ngigits位精度的值。如果省略，则返回最接近输入值的整数。有可能向下取整，也有可能向上取整。
+
+
+
+
+

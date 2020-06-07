@@ -1,7 +1,39 @@
 首先执行try中的代码块，如果try中的没有发生异常，则跳过except中的语句
-如果try中发生了异常
+如果发成的异常和except指定的异常不匹配，则将其传递到外部的try语句中。如果没有找到处理
+则ta是一个未处理异常，执行将停止并显示异常信息
+最多执行一个except处理程序。
 语法：
     try:
-
+        raise Exception("","")# 手动抛出异常
     except ValueError:
+    except OSError as err:
+    except RuntimeError:
+    except(RuntimeError,TypeError,NameError) 可以将多个异常 包含在一个元组里面
+    except Exception as inst:
+        inst.args # 获取“手动抛出异常”中的参数，
+        x,y=inst.args
+    else:
+        print(该else为可选，跟在所有except后面，在try子句不引发异常时执行。)
+
+在有多个except时，如果父类的错误放在第一位，则后续的错误捕获不到，只会捕获到第一个异常
+python定义集成的方式：class B(Exception): 在类名的括号中写入需要集成的类名
+
+如下可以确定是否引发了异常，同时并不处理该异常，重新引发异常。
+try:
+    raise NameError()
+except NameError:
+    print("An exception ")
+    raise
+
+自定义异常：自定义自己的异常类，需要直接或间接的派生自Exception
+通常的做法是为该模块定义异常基类，然后为不同的错误条件创建特定异常的子类
+
+关于异常处理需要注意的几点
+1.如果try中发生了异常，同时没有被except所处理，则该异常会在finally执行以后重复引发。
+2.当异常发生在except或else中时，该异常也会在finally执行以后重新引发。
+3.如果try中有break，continue或return语句，finally会在执行这三者之前执行。
+4.如同try和finally中同时存在return语句，该返回值是finally中的返回值。
+
+with提供预定义清理的操作，比如在打开一个文件以后，with会保证文件对象的正常关闭，而不是一直处于打开的状态下消耗资源。
+
 

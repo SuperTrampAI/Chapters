@@ -1,0 +1,8 @@
+模板字符串：描述了更简便的字符串替换方式，使用$来作为替换变量的识别，不区分大小写，以下划线或ascii字母开头。方式为$param 或者 ${param}
+包的位置：from string import Template
+s=Template("$who likes $what")
+d=dict(who='tim') 这两种方式本质上 是一样的
+s.substitute(who='',what='')
+substitute 这个方法，在模板中，定义了n个占位符，就必须全部赋值。而safe_substitute(d) 该方法可无需全部赋值，在没有赋值时，原样输出。
+可以继承Template，来自定义占位符，分克服，或用于解析模板字符串的整个正则表达式。
+

@@ -1,0 +1,66 @@
+布尔运算：or，and，not，优先级升序排序，越往后优先级越高。
+    or：短路运算符，只要在第一个参数为假值时，才会对第二个参数求值
+    and：短路运算符，只有在第一个参数为真值时，才会对第二个参数求值。
+    not：优先级比非布尔运算符低
+
+比较：有八种比较运算符。优先级相同，比布尔运算优先级高。比较运算符可以任意串联。
+    <,<=,>,>=,==,!=,is,is not
+
+数字类型：int:整数，float浮点数,complex负数
+布尔值属于整数的子类型。整数具有无限的精度。
+复数包含实部和虚部，分别以一个浮点数表示。要从一个复数z中提取这两个部分，可使用z.real,he z.imag。在数字字面值末尾加上j或J，会生成虚数。
+除复数以外的数字所支持的运算：+加 -减 *乘 /商 //整数除法 %取余 -取反 +不变 abs绝对值 int(x)转为int类型 float(转为float类型) complex() .conjugate divmod pow(x,y)x的y次幂 **
+
+整数类型的按位运算：只对整数有意义。
+
+int.bin_length() 返回以二进制表示一个整数所需要的位数，不包含符号位和前面的零。
+
+序列类型：list，tuple，range
+    字符串的操作：in，not in，+；*；切片，len，min，max，index，count
+
+
+列表：list
+    创建列表的方式：[];[a,b,c];列表推导式：[x for x in iterable];使用类型 构造器：list() or list(iterable)
+    list('abc') 将是一个包含三个元素的列表；list((1,2,3)) 返回[1,2,3]
+    列表支持的方法：
+        sort 排序：如果有异常，整个排序将会失败。
+
+元组：不可变序列，tuple。实际决定生成元组的是逗号而不是圆括号。
+    创建元素的方式：();a,;(a,);tuple();tuple(iterable),tuple('abc')=(a,b,c);tuple([1,2,3])=(1,2,3)
+
+range对象：不可变的数字序列，通常用于在for循环中循环指定的次数。
+range(stop)
+range(start,stop[,step]) step默认值为1，start默认值为0，如果setp为零则会引发ValueError异常。
+
+文本序列：str。不可变序列。单引号，双引号，三重引号，在单引号中可以包含双引号，在双引号中可以包含单引号。
+    method：
+        capitalize() 返回原字符串的副本，其首个字母大写，其余为小写。
+        casefold：转换为小写，而对于某些特殊字符，就算是小写，也会进行一个转换，而lower则不会进行一个转换。
+        cneter(width[,fillchar])：返回长度为width的字符串。使用fillchar填充两边的空位，默认使用ascii空格。如果width咸鱼等于len，则返回源字符串的副本。
+        count(encoding='utf-8',errors='strict'):返回源字符串编码为字符串对象的版本，默认为utf。
+
+memoryview 对象允许python代码访问一个对象的内部数据，只要该对象支持缓冲区协议而无需进行拷贝
+memoryview(obj)  支持缓冲区协议的内置对象包块bytes，和bytearray。
+
+集合类型：set，frozenset
+set对象是具有唯一性的，hashable对象所组成的无序多项集，常见的用途包括成员检测，从序列中取出重复项以及数学的集合类计算。
+集合不记录元素位置插入位置或插入顺序，集合不支持索引，切片和其序列的操作。
+set是可变的，可以add和remove等操作，没有哈希值，而forzenset类型是不可改变的，并且hashable其内容在创建后不可能再改变，因此该集合可以用作字典的键或者是其他集合的元素
+set集合的创建语法：{"",""}；还可以通过构造器创建：set([iterable]) and frozenset([iterable])
+
+映射类型——dict：列表，字典或其他可变类型的值不可用作键。
+创建字典语法：使用花括号{"":"","":""} 或者是使用dict构造器创建
+dict(**kwarg)
+dict(mapping,**kwarg)
+dict(iterable,**kwarg)
+
+如果一个键出现一次以上，该键的最好一个值将替换前一个值。
+
+上下文管理器类型：with
+
+
+
+
+
+
+

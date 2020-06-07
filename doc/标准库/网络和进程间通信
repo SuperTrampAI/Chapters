@@ -1,0 +1,8 @@
+asyncio--异步IO
+高层及的API：
+    如果一个对象可以在await语句中使用，那么它就是队等待对象。可等待对象有三种主要类型：协程，任务和Future
+    协程使用async定义，在方法前
+    任务：被用来设置日程以便并发执行进程。创建方式：使用asyncio.create_task()，等函数被打包成为一个任务。
+        使用async定义一个方法，然后把调用asyncio.create_task(method) 打包成为一个任务，使用await执行任务
+    Futures 低层级的可等待对象，通常情况下，没有必要在应用曾经的代码中创建Future对象。
+

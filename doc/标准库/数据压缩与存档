@@ -1,0 +1,11 @@
+zlib
+
+gzip
+
+bz2
+
+lzma
+
+zipfile
+
+tarfile

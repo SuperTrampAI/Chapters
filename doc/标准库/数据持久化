@@ -1,0 +1,33 @@
+pickle--模块pickle实现了对一个python对象结构的二进制序列化和反序列化。
+封存--picking  解封--unpicking
+注意：pickle模块并不安全。因此你应该只对你信任的数据进行unpickle操作
+因此在使用unpickle操作时，考虑使用hamc对数据进行签名，保证数据没有被改过
+或者是在处理不信任的数据时，采取json更合适。
+
+pickle是序列化python对象时的首选，marshal主要是为了支持python的.pyc文件
+
+pickle和marshal之间的区别：
+    1.pickle会跟踪已被序列的对象，在被应用后，不会再次被序列号，marshal不会
+    2.marshal不能被用于序列化用户定义类及其实例。pickle能够透明地存储并保存类实例。
+    3.marshal格式不保证数据能够移植到不同的python版本中，在pickle是可以在python中向后兼容的。
+
+pickle 和json模块的比较：
+    1.json是一个文本序列化格式，utf-8编码，pickle是二进制
+    2.json可阅读，pickle不是
+    3.json可和其他语言，系统做交互，pickle是python专用的
+    4.对json进行反序列化，不会造成任意恶意代码执行漏洞
+    序列化某个层次结构的对象为数据流：dumps
+    反序列化数据流为对象：loads()
+
+    如果需要对序列化和反序列化加以更多的控制，可以分别创建Picker和Unpickler对象
+    反序列化成为解封，把一个对象从字节流中转出来；序列化成为封存，把一个对象封存为字节流
+
+    非python程序无法解析pickle封存的python对象，可以使用压缩由pickle封存的数据。
+
+    pickletools可以用于分析pickle生成的数据流。
+
+    shelve：提供了一个接口，用于在dbm类型的数据库文件上解封和封存对象。
+
+
+
+

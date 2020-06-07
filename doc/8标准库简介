@@ -1,0 +1,137 @@
+os模块
+导入os包的时候一定要使用import os，而不是使用from os import *
+
+os.getcwd() 返回当前工作目录
+os.chdir("") 更改当前目录
+os.system('mkdir today') 运行shell程序
+
+内置dir()和help()函数可用作交互辅助工具
+
+shutil
+shutil.copyfile('','')
+
+文件通配符：import glob
+可以在目录中使用通配符搜索创建文件列表的函数。
+glob.glob('*.py')
+
+命令行参数：
+import sys
+sys.argv
+sys.stderr/stdout/stdin.write('')
+sys.exit() 终止脚本的方式
+
+python中的正则：re模块提供正则
+import re
+re.findall(r'表达式','string text')
+'tea for too'.replace('too','two') 查找是否包含，简单的查找。
+
+数学：math，提供了对于浮点数学底层c库函数的访问
+math.cos
+math.log
+
+随机选择的工具：
+import random
+random.choice(['','',''])
+random.sample(range(100),10) 随机从100里面打印10个数。
+random.random() 打印浮点数
+random.randrange(6) 随机从6一下打印数字
+
+计算数值数据的基本统计属性（均值，中位数，方差等）：statistics
+import statistics
+
+互联网访问：
+urllib.request 用于从url检索数据
+smptlib用于发送邮件。
+
+日期和时间：from datatime import date
+now.strftime('') 格式化
+
+数据压缩：import zlib,gzip,bz2,lzma,zipfile,tarfile
+zlib.compress('str')
+zlib.decompress('str')
+
+性能测试：from timeit import Timer
+Timer('t=b;a=b;b=t','a=1;b=2').timeit()
+
+profile和pstats模块提供了用于在较大的代码块中识别时间关键部分的工具。
+
+质量控制：
+doctest：用于烧苗模块并验证程序文章字符串中的嵌入的测试。
+def average(values):
+    """Computes the arithmetic mean of a list of numbers.
+
+    >>> print(average([20, 30, 70]))
+    40.0
+    """
+    return sum(values) / len(values)
+
+import doctest
+doctest.testmod()   # automatically validate the embedded tests
+
+unittest：允许在一个单独的文件中维护更全面的测试集。
+
+自带电池：
+xmlrpc.client ；xmlrpc.server
+email，包是一个用于管理电子邮件的库，包括MIME和其他
+poplib用于发送和接受消息
+json：提供解析json
+csv：模块支持以逗号分隔符直接读取和写入文件。
+sqlite3
+国际化：
+
+格式化输出：
+reprlib 模块的repr函数：reprlib.repr(set('supercalifragilisticexpialidocious'))
+
+pprint：
+
+textwrap：格式化文本段落，以适应给定的屏幕宽度
+textwrap.fill(doc,width=40)
+
+locale模块
+
+模板：Template 允许用户在不更改应用逻辑的情况下定制自己的应用
+from string import Template
+t = Template('${village}folk send $$10 to $cause.')
+d=dict(village='Nottingham', cause='the ditch fund')
+t.safe_substitute(d) 如果占位符没有输出，则原样保留。
+t.substitute(village='Nottingham', cause='the ditch fund')
+
+Template的子类可以自定义界符。
+class BatchRename(Template):
+    delimiter='%'
+
+使用二进制数据记录格式：
+
+多线程：
+
+
+日志：
+import logging
+logging.debug('Debugging information')
+logging.info('Informational message')
+logging.warning('Warning:config file %s not found', 'server.conf')
+logging.error('Error occurred')
+logging.critical('Critical error -- shutting down')
+
+弱应用：
+
+
+用于操作列表的工具：from array import array 类似于列表
+
+collections模块提供了一种deque对象，类似于列表，从左端添加弹出速度较快，而在中间查找较慢。适合实现队列和广度优先数搜索
+bisect：用户凑排序列表的函数，可以根据主键自动排序：
+    import bisect
+    scores = [(100, 'perl'), (200, 'tcl'), (400, 'lua'), (500, 'python')]
+    bisect.insort(scores, (300, 'ruby'))
+    scores
+
+heapq：最小的值，使用保持在0位
+from heapq import heapify, heappop, heappush
+data = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0]
+heapify(data)                      # rearrange the list into heap order
+heappush(data, -5)                 # add a new entry
+[heappop(data) for i in range(3)]  # fetch the three smallest entries
+
+
+十进制浮点运算：使用对于数字精度比较高的场景
+from decimal import *

@@ -1,0 +1,82 @@
+1.类提供了一种组合数据和功能的方式。类是面向对象思想的一种实例，该对象可以保存自己状态的属性，也可以改变状态
+
+2.类可以继承，可以同时继承多个类，派生类可以覆盖基类的任何方法。一个方法可以调用基类中相同名称的方法，可以包含任意数量和类型的数据，
+
+3.类成员包括数据成员是public，所以成员函数是virtual。
+
+4.python作用域和命名空间
+命名空间namespace是一个名字到对象的映射，大部分的命名空间都由python字典实现，在不要面对性能问题前，不会去关注他们
+存放内置函数的集合，模块中的全局名称，函数调用中的局部变量都是命名空间。
+不同时刻创建的命名空间拥有不同的生存期，内置名称的命名空间由python创建，永远不会被删除，模块的全局命名空间在模块定义被读入时创建。
+通常，模块命名空间也会持续到解释器退出，一个函数的本地命名空间在这个函数被调用时创建，并在函数返回或抛出不在函数内部处理的错误时被删除。
+
+5.nonlocal 和global的使用
+
+6.实例：
+class MyClass:
+    '''a simple class'''
+    def __init__(self,realpart,imagepard): # 初始化对象参数。
+        self.data=[]
+    i=1
+    def f(self):
+        return 'string'
+
+__doc__返回该类的文档字符串。
+
+x=MyClass() 创建类的新实例，并将此对象分配个局部变量x
+
+实例变量用于每个实例的唯一数据，类变量用于类的所有实例共享的属性和方法。
+如果同样的属性名称同时出现在实例和类中，则属性查找会优先选择实例。
+
+在python中，无法做到强制的隐藏数据，完全是基于约定的，当然如果一定外实现该特性，是可以通过c语言编写扩展来使用。
+
+类的继承：
+语法：class BerivedClassName(BaseClassName)
+如果请求的属性在类中找不到，搜索将转往基类中查找。
+
+
+私有变量：私有变量在python中并不存在，而是遵循一个约定：带有一个下划线的名称被当作API的非公有部分：_spam
+无论是函数或是数据成员。
+
+通过名称改写的方式有助于让子类重载方法二部破坏类内方法的调用。
+在父类中定义一个方法，比如update(),在后名称改写：__update=update(),然后就可以在派生类中改写update方法
+
+可以通过定义个空类的方式，在使用时，通过实例的方式组装属性
+实例：
+class Employee:
+    pass
+john=Employee()
+john.name=''
+john.dept=''
+
+迭代器：
+    it=iter("abc")
+    next(it)  然后不断的调用next方法，知道抛出StopIteration异常
+
+class Reverse:
+    def __init__(self,data):
+        self.data=data
+        self.index=len(data)
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index==0:
+            raise StopInteration
+        self.index=self.index-1
+        return self.data[self.index]
+
+
+生成器是用于创建迭代器的简单而且更强大的方法，返回数据时使用yield语句：
+def reverse(data):
+    for index in range(len(data)-1,-1,-1)： # 倒序输出
+        yield data[index]
+for char in reverse('string'):
+    print(char)
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+所有的异常类都派生自BaseExcption的类。一般而言，不推荐直接继承BaseException来实现自定义的异常类。
+而是通过Exception来继承。
+
+Exception：所以内置的非系统退出异常都派生自此类。所以用户自定义异常也应该派生自此类。
+ArithmeticError：针对各种算术类错误而引发的内置异常：OverflowError，ZeroDivisionError，FloatingPointError
+BufferError：缓冲区相关操作无法执行时，将被引发。
+LookupError：映射或序列所使用的键或索引无效时引发：IndexError，KeyError。可以通过codecs.lookup()直接引发
+
+
+
+
+

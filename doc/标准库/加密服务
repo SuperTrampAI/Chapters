@@ -1,0 +1,8 @@
+digest_size
+
+密匙派生：
+    hashlib.pbkdf2_hmac(hash_name,password,salt,iterations,dklen=None)
+
+    secrets--生成安全随机数字用于管理密码；
+        生成高加密强度的随机数，使用管理密码，账户验证，安全凭证，和相关机密数据管理的需要。
+        random模块中的默认的伪随机数生成器，不适用于安全和加密。
